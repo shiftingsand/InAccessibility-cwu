@@ -19,6 +19,7 @@
 		960B8B56283C055F00EE52A4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B8B54283C055F00EE52A4 /* MainView.swift */; };
 		960B8B5A283C056500EE52A4 /* StockConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B8B58283C056500EE52A4 /* StockConstants.swift */; };
 		960B8B5B283C056500EE52A4 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B8B59283C056500EE52A4 /* Stock.swift */; };
+		960B8B5D283C083400EE52A4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B8B5C283C083400EE52A4 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		960B8B54283C055F00EE52A4 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		960B8B58283C056500EE52A4 /* StockConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockConstants.swift; sourceTree = "<group>"; };
 		960B8B59283C056500EE52A4 /* Stock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		960B8B5C283C083400EE52A4 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				960B8B58283C056500EE52A4 /* StockConstants.swift */,
 				960B8B59283C056500EE52A4 /* Stock.swift */,
+				960B8B5C283C083400EE52A4 /* Helpers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				960B8B56283C055F00EE52A4 /* MainView.swift in Sources */,
 				960B8B4D283C055800EE52A4 /* StockPrice.swift in Sources */,
 				960B8B51283C055800EE52A4 /* StockCell.swift in Sources */,
+				960B8B5D283C083400EE52A4 /* Helpers.swift in Sources */,
 				960B8B55283C055F00EE52A4 /* DetailView.swift in Sources */,
 				960B8B3A283C04D300EE52A4 /* InAccessibility_cwuApp.swift in Sources */,
 				960B8B4E283C055800EE52A4 /* StockGraph.swift in Sources */,

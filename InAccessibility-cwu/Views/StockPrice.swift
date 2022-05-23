@@ -15,7 +15,7 @@ struct StockPrice: View {
     var body: some View {
         //VStack(alignment: .trailing, spacing: 2) {
         HStack {
-            Text("\(String(format: "%.2f",stock.stockPrice))")
+            Text("\(prettyPrice(stock.stockPrice))")
             // having these two Text Views be different sizes really screwed things up visually.
                 .font(.caption)
                 .accessibilityLabel(Text("Stock Price"))

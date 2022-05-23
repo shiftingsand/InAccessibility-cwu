@@ -22,19 +22,3 @@ enum UserDefConstants {
 enum ColorBlindMode : String, Codable, CaseIterable {
     case greenRed = "Green Red", blueOrange = "Blue Orange", blueRed = "Blue Red", blueBrown = "Blue Brown"
 }
-
-//func colorsToUse(_ colorblindMode : ColorBlindMode) -> (greenColor : Color, redColor : Color) {
-func colorsToUse(modeToUse : ColorBlindMode) -> (greenColor : Color, redColor : Color) {
-    #warning("update readme")
-    
-    switch modeToUse {
-        case .greenRed:
-            return (greenColor: .green, redColor: .red)
-        case .blueOrange:
-            return (greenColor: .blue, redColor: .orange)
-        case .blueRed:
-            return (greenColor: .blue, redColor: .red)
-        case .blueBrown:
-            return (greenColor: .blue, redColor: .brown)
-    }
-}

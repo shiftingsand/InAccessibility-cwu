@@ -13,18 +13,6 @@ struct StockCell: View {
     
     @State var showInfo = false
     
-    // learned how to do this from here:
-    // https://www.swiftbysundell.com/articles/formatting-numbers-in-swift/
-    var prettyPrice : String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        //formatter.currencyCode = currency.rawValue
-        formatter.maximumFractionDigits = 2
-        
-        let number = NSNumber(value: stock.stockPrice)
-        return formatter.string(from: number) ?? "Unknown"
-    }
-    
     var body: some View {
         VStack {
             
@@ -89,7 +77,7 @@ struct StockCell: View {
         }
         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 8))
         .alert(isPresented: $showInfo) {
-            Alert(title: Text(stock.name), message: Text("The stock price for \(stock.name) (\(stock.shortName)) is \(prettyPrice)."), dismissButton: .cancel())
+            Alert(title: Text(stock.name), message: Text("The stock price for \(stock.name) (\(stock.shortName)) is \(prettyPrice(stock.stockPrice))."), dismissButton: .cancel())
         }
     }
 }
