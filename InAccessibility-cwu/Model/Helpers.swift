@@ -26,11 +26,17 @@ func colorsToUse(modeToUse : ColorBlindMode) -> (greenColor : Color, redColor : 
     switch modeToUse {
         case .greenRed:
             return (greenColor: .green, redColor: .red)
+        case .greenPurple:
+            return (greenColor: .green, redColor: .purple)
         case .blueOrange:
             return (greenColor: .blue, redColor: .orange)
         case .blueRed:
             return (greenColor: .blue, redColor: .red)
         case .blueBrown:
             return (greenColor: .blue, redColor: .brown)
+        case .cyanBrown:
+            return (greenColor: .cyan, redColor: .brown)
+        case .yellowPink:
+            return (greenColor: .yellow, redColor: .pink)
     }
 }

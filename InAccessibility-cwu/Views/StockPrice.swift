@@ -8,20 +8,23 @@
 import SwiftUI
 
 struct StockPrice: View {
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    
     @AppStorage(UserDefConstants.ColorblindMode) var colorBlindModeFound : ColorBlindMode = UserDefConstants.ColorblindModeDefault
     
     let stock: Stock
     
     var body: some View {
         //VStack(alignment: .trailing, spacing: 2) {
-        HStack {
+        Group {
             Text("\(prettyPrice(stock.stockPrice))")
             // having these two Text Views be different sizes really screwed things up visually.
                 .font(.caption)
-                .accessibilityLabel(Text("Stock Price"))
-            #warning("pretty up the currency")
+                .accessibilityLabel(Text("Stock Price \(prettyPrice(stock.stockPrice))"))
             
-            Spacer()
+            if dynamicTypeSize.isAccessibilitySize == false {
+                Spacer()
+            }
             
             Text("\(String(format: "%.2f",stock.change))")
                 .bold()
@@ -30,7 +33,7 @@ struct StockPrice: View {
                 .background(stock.goingUp ? colorsToUse(modeToUse: colorBlindModeFound).greenColor : colorsToUse(modeToUse: colorBlindModeFound).redColor)
                 .cornerRadius(6)
                 .foregroundColor(.white)
-                .accessibilityLabel(Text("Stock Change"))
+                .accessibilityLabel(Text("Stock Change \(String(format: "%.2f",stock.change))"))
         }
     }
 }

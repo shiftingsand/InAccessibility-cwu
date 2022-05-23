@@ -20,5 +20,11 @@ enum UserDefConstants {
 }
 
 enum ColorBlindMode : String, Codable, CaseIterable {
-    case greenRed = "Green Red", blueOrange = "Blue Orange", blueRed = "Blue Red", blueBrown = "Blue Brown"
+    case greenRed = "Green Red",
+         greenPurple = "Green Purple",
+         blueOrange = "Blue Orange",
+         blueRed = "Blue Red",
+         blueBrown = "Blue Brown",
+         cyanBrown = "Cyan Brown",
+         yellowPink = "Yellow Pink"
 }

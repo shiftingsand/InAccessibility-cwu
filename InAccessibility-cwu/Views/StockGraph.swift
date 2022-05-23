@@ -43,6 +43,7 @@ struct StockGraph: View {
             .animation(.default, value: showDots)
             .accessibilityHidden(!showDots)
             .accessibilityChildren {
+                #warning("make this a readable list insead!!!")
                 HStack {
                     ForEach(points.indices, id:\.self) { pointy in
                         Text("\(points[pointy])")

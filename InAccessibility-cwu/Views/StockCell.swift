@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct StockCell: View {
-    
-    let stock: Stock
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     
     @State var showInfo = false
+    
+    let stock: Stock
     
     var body: some View {
         VStack {
@@ -25,8 +26,7 @@ struct StockCell: View {
                     //.font(.system(size: 17))
                         .font(.body)
                         .bold()
-                        .accessibilityLabel(Text("Short Name"))
-                        .accessibilityHint(Text(stock.shortName))
+                        .accessibilityLabel(Text("Short Name \(stock.shortName)"))
                     
                     Spacer()
                     
@@ -52,9 +52,6 @@ struct StockCell: View {
                         .accessibilityHidden(!stock.favorite)
                         .accessibilityLabel(Text("Favorite indicator"))
                         .accessibilityHint(Text("A \(UIConstants.StarColor.description) star indicating it's a favorite."))
-                    
-//                    UIColor.yellow.accessibilityName
-//                    Color.yellow.???
                 }
      
             }
@@ -64,8 +61,7 @@ struct StockCell: View {
                     .opacity(0.5)
                 //.font(.system(size: 11))
                     .font(.caption)
-                    .accessibilityLabel(Text("Stock Name"))
-                    .accessibilityHint(Text(stock.name))
+                    .accessibilityLabel(Text("Stock Name \(stock.name)"))
                 
                 Spacer()
             StockGraph(stock: stock)
@@ -73,7 +69,16 @@ struct StockCell: View {
             
             Spacer()
                 
-            StockPrice(stock: stock)
+            // if the values are really long then both of them wont fit on one line on small screen with huge text
+            HStack {
+                if dynamicTypeSize.isAccessibilitySize {
+                    VStack {
+                        StockPrice(stock: stock)
+                    }
+                } else {
+                    StockPrice(stock: stock)
+                }
+            }
         }
         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 8))
         .alert(isPresented: $showInfo) {

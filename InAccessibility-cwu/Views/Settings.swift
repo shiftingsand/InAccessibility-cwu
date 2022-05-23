@@ -29,11 +29,11 @@ struct Settings: View {
                         }
                         .accessibilityElement(children: .combine)
                         .accessibilityLabel(Text("Choose colors"))
-                        .accessibilityHint(Text("\(colorsToUse(modeToUse: oneColor).greenColor.description) being used for the \"green\" color and \(colorsToUse(modeToUse: oneColor).redColor.description) being used for the \"red\" color."))
+                        .accessibilityHint(Text("\(colorsToUse(modeToUse: oneColor).greenColor.description) will be used for the \"green\" color and \(colorsToUse(modeToUse: oneColor).redColor.description) will be used for the \"red\" color."))
                     }
                 }
             } header: {
-                Text("Colorblind mode")
+                Text("Alternate Color Schemes")
             } footer: {
                Text("Choose what colors to use instead of a green/red combination.")
             }

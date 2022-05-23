@@ -65,9 +65,9 @@ struct MainView: View {
                     .onTapGesture {
                         showDetailStock = stock
                     }
-                    .accessibilityAddTraits(.isButton)
-                    .accessibilityLabel(Text("Stock Cell"))
-                    .accessibilityHint(Text("Tap to show details."))
+//                    .accessibilityAddTraits(.isButton)
+//                    .accessibilityLabel(Text("Stock Cell"))
+//                    .accessibilityHint(Text("Tap to show details."))
             }
         } header: {
             Text("All Stocks")
@@ -80,23 +80,9 @@ struct MainView: View {
                 NavigationLink(destination: Settings()) {
                     Text("\(Image(systemName: "gearshape.fill"))")
                         .accessibilityLabel(Text("Settings"))
-                        .accessibilityHint(Text("Access settings."))
+                        .accessibilityHint(Text("Access the settings menu."))
                 }
-                
-                
-                
-                //)
-                
-                //                Button {
-                //                    showSettings.toggle()
-                //                    print("show settings is \(showSettings)")
-                //                } label: {
-                //                    Image(systemName: "gearshape.fill")
-                //                }
-                //                .accessibilityLabel(Text("Settings"))
-                //                .accessibilityHint(Text("Access settings."))
             }
-            
         }
     }
 }
