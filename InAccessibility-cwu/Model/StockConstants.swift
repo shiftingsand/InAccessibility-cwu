@@ -14,6 +14,10 @@ enum UIConstants {
     static let StarColor : Color = .yellow
 }
 
+enum MessageConstants {
+    static let TapForCompanyInfo = "Tap for info about the company."
+}
+
 enum UserDefConstants {
     static let ColorblindMode = "ColorblindMode"
     static let ColorblindModeDefault : ColorBlindMode = .blueOrange

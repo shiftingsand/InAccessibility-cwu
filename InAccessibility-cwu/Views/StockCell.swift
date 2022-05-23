@@ -23,6 +23,8 @@ struct StockCell: View {
                         .font(.body)
                         .bold()
                         .accessibilityLabel(Text("Short Name \(stock.shortName)"))
+                        .accessibilityAddTraits(.isButton)
+                        .accessibilityHint(Text(MessageConstants.TapForCompanyInfo))
                     
                     Spacer()
                     
@@ -46,8 +48,9 @@ struct StockCell: View {
                         .foregroundColor(UIConstants.StarColor)
                         .opacity(stock.favorite ? 1 : 0)
                         .accessibilityHidden(!stock.favorite)
+                        .accessibilityAddTraits(.isButton)
                         .accessibilityLabel(Text("Favorite indicator"))
-                        .accessibilityHint(Text("A \(UIConstants.StarColor.description) star indicating it's a favorite."))
+                        .accessibilityHint(Text("A \(UIConstants.StarColor.description) star indicating it's a favorite." + MessageConstants.TapForCompanyInfo))
                 }
      
             }
@@ -58,6 +61,8 @@ struct StockCell: View {
                 //.font(.system(size: 11))
                     .font(.caption)
                     .accessibilityLabel(Text("Stock Name \(stock.name)"))
+                    .accessibilityAddTraits(.isButton)
+                    .accessibilityHint(Text(MessageConstants.TapForCompanyInfo))
                 
                 Spacer()
                 

@@ -21,6 +21,8 @@ struct StockPrice: View {
             // having these two Text Views be different sizes really screwed things up visually.
                 .font(.caption)
                 .accessibilityLabel(Text("Stock Price \(prettyPrice(stock.stockPrice))"))
+                .accessibilityAddTraits(.isButton)
+                .accessibilityHint(Text(MessageConstants.TapForCompanyInfo))
             
             if dynamicTypeSize.isAccessibilitySize == false {
                 Spacer()
@@ -34,6 +36,8 @@ struct StockPrice: View {
                 .cornerRadius(6)
                 .foregroundColor(.white)
                 .accessibilityLabel(Text("Stock Change \(String(format: "%.2f",stock.change))"))
+                .accessibilityAddTraits(.isButton)
+                .accessibilityHint(Text(MessageConstants.TapForCompanyInfo))
         }
     }
 }
