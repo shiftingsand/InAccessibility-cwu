@@ -33,7 +33,6 @@ struct StockGraph: View {
                 ForEach(points, id: \.self) { point in
                     Circle()
                         .frame(width: bigCircles ? 10 : 4, height: bigCircles ? 10 : 4)
-                        //.foregroundColor(stock.goingUp ? .green : .red)
                         .foregroundColor(stock.goingUp ? colorsToUse(modeToUse: colorBlindModeFound).greenColor : colorsToUse(modeToUse: colorBlindModeFound).redColor)
                         .offset(y: CGFloat(stock.goingUp ? -point : point) * 0.3)
                 }
@@ -43,14 +42,12 @@ struct StockGraph: View {
             .animation(.default, value: showDots)
             .accessibilityHidden(!showDots)
             .accessibilityChildren {
-                #warning("make this a readable list insead!!!")
-                HStack {
-                    ForEach(points.indices, id:\.self) { pointy in
-                        Text("\(points[pointy])")
-                    }
-                }
-                .accessibilityHint(Text("The points that were shown in graph format."))
-                .accessibilityLabel(Text("Stock Graph Data"))
+                //let allPoints = points.map { String($0)}.joined(separator: ",")
+                // props to Stefan Blos for reminding me that ".formatted" can add 'and' to the end of the string.
+                let allPoints = points.map {String($0)}.formatted(.list(type: .and, width: .standard))
+                Text("Stock Graph points are \(allPoints)")
+                    .accessibilityHint(bigCircles ? Text("Show small circles.") : Text("Show big circles."))
+                    .accessibilityAddTraits(.isButton)
             }
         }
         .onAppear {
@@ -62,8 +59,6 @@ struct StockGraph: View {
                 bigCircles.toggle()
             }
         }
-        .accessibilityAddTraits(.isButton)
-        //.accessibilityHint(bigCircles ? Text("Show small circles.") : Text("Show big circles."))
     }
 }
 

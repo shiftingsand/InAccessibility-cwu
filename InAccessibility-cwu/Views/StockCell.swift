@@ -16,10 +16,6 @@ struct StockCell: View {
     
     var body: some View {
         VStack {
-            
-
-            
-            //VStack(alignment: .leading, spacing: 4) {
             HStack {
                 HStack {
                     Text(stock.shortName)
@@ -64,7 +60,8 @@ struct StockCell: View {
                     .accessibilityLabel(Text("Stock Name \(stock.name)"))
                 
                 Spacer()
-            StockGraph(stock: stock)
+                
+                StockGraph(stock: stock)
             }
             
             Spacer()
