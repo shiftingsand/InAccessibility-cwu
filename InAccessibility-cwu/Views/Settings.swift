@@ -29,6 +29,7 @@ struct Settings: View {
                         }
                         .accessibilityElement(children: .combine)
                         .accessibilityLabel(Text("Choose colors"))
+                        // props to Kris Slazinski for informing me you can use ".description" to get a color description.
                         .accessibilityHint(Text("\(colorsToUse(modeToUse: oneColor).greenColor.description) will be used for the \"green\" color and \(colorsToUse(modeToUse: oneColor).redColor.description) will be used for the \"red\" color."))
                     }
                 }
