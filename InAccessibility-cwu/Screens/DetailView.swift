@@ -40,6 +40,7 @@ struct DetailView: View {
                         dismiss()
                     } label: {
                         Text("Done")
+                            .accessibilityHint(Text("Dismiss this view."))
                     }
                 }
             }
@@ -69,6 +70,7 @@ struct DetailView: View {
                     Text(stock.shortName)
                     //.font(.system(size: 12))
                         .font(.caption)
+                        .accessibilityLabel(Text("Short Name \(stock.shortName)"))
                     
                     Spacer()
                     
