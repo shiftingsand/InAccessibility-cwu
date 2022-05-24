@@ -5,7 +5,7 @@ I did [some research](https://www.tableau.com/about/blog/examining-data-viz-rule
 
 I also thought the black graph was hard to read in dark mode so I had that change when toggling between light and dark mode.
 
-I coded this as an iPhone app!!!
+I coded this as an iPhone app in portrait mode. The simulator will still let you use landscape even though I didn't select that in Device Orientation. [This blog post](https://www.jessesquires.com/blog/2021/11/13/xcode-13-device-orientation-bug/) talks about that.
 
 ----
 A SwiftUI app that's not very accessible... On purpose
