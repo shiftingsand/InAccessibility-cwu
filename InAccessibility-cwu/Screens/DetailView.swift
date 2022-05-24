@@ -17,6 +17,8 @@ enum AlertItem: String, Identifiable {
 struct DetailView: View {
     @Environment(\.dismiss) var dismiss
     
+    @AppStorage(UserDefConstants.ColorblindMode) var colorBlindModeFound : ColorBlindMode = UserDefConstants.ColorblindModeDefault
+    
     @State var selectedAlertItem: AlertItem?
     
     let stock: Stock
@@ -98,31 +100,30 @@ struct DetailView: View {
     
     var buttons: some View {
         VStack {
-            Text("Tap to share")
+            Button {
+                selectedAlertItem = .share
+            } label: {
+                Text("Tap to share")
                 .bold()
                 .font(.title2)
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .center)
-                .background(Color.blue)
-                .cornerRadius(15)
-                .foregroundColor(.white)
-                .onTapGesture {
-                    selectedAlertItem = .share
-                }
-                .accessibilityAddTraits(.isButton)
+                .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(colorsToUse(modeToUse: colorBlindModeFound).greenColor)
+            .controlSize(.large)
             
-            Text("Favorite")
+            // i've never seen a yellow button and can't shake the feeling the text was hard to read.
+            Button {
+                selectedAlertItem = .favorite
+            } label: {
+                Text("Favorite")
                 .bold()
                 .font(.title2)
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .center)
-                .background(Color.yellow)
-                .cornerRadius(15)
-                .foregroundColor(.white)
-                .onTapGesture {
-                    selectedAlertItem = .favorite
-                }
-                .accessibilityAddTraits(.isButton)
+                .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(colorsToUse(modeToUse: colorBlindModeFound).redColor)
+            .controlSize(.large)
         }
     }
 }
