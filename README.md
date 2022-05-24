@@ -1,7 +1,7 @@
 # InAccessibility
 I'm [Chris Wu](https://twitter.com/MuseumShuffle) and this is my entry. My two main goals were to make this app useable for people that use very large accessibility fonts (even on very small screens) and VoiceOver users.
 
-I did [some research](https://www.tableau.com/about/blog/examining-data-viz-rules-dont-use-red-green-together) and found that green/red colorblindness is very common. I changed the gear button so that it would go to a settings menu where the user can choose colors that are hopefully more useful.
+I did [some research](https://www.tableau.com/about/blog/examining-data-viz-rules-dont-use-red-green-together) and found that green/red colorblindness is very common. I changed the gear button so that it would go to a settings menu where the user can choose colors that are hopefully more useful. I made some logic so that the hint will describe what is being replaced and what that color indicates.
 
 I also thought the black graph was hard to read in dark mode so I had that change when toggling between light and dark mode.
 
