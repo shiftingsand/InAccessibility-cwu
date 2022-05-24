@@ -20,7 +20,7 @@ enum MessageConstants {
 
 enum UserDefConstants {
     static let ColorblindMode = "ColorblindMode"
-    static let ColorblindModeDefault : ColorBlindMode = .blueOrange
+    static let ColorblindModeDefault : ColorBlindMode = .greenRed
 }
 
 enum ColorBlindMode : String, Codable, CaseIterable {
