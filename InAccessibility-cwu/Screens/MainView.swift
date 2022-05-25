@@ -80,7 +80,7 @@ struct MainView: View {
                 NavigationLink(destination: Settings()) {
                     Text("\(Image(systemName: "gearshape.fill"))")
                         .accessibilityLabel(Text("Settings"))
-                        .accessibilityHint(Text("Access the settings menu."))
+                        .accessibilityHint(Text("Change the color scheme."))
                 }
             }
         }
