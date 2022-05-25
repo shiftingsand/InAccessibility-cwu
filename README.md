@@ -3,6 +3,7 @@ I'm [Chris Wu](https://twitter.com/MuseumShuffle) and this is my entry. My two m
 
 I did [some research](https://www.tableau.com/about/blog/examining-data-viz-rules-dont-use-red-green-together) and found that green/red colorblindness is very common. I changed the gear button so that it would go to a settings menu where the user can choose colors that are hopefully more useful. 
 
+
 ![The menu where colors are selected.](https://github.com/shiftingsand/InAccessibility-cwu/blob/main/052522colorMenu.png)
 
 ![The UI after an alternate color scheme has been selected.](https://github.com/shiftingsand/InAccessibility-cwu/blob/main/052522colorResult.png)
@@ -11,7 +12,7 @@ I made some logic so that the accessibility hint will describe what color is bei
 
 Something I can't figure out is how to stop the footer in a Section of a SwiftUI Form from bleeding into the section when the largest accessibility fonts are used.
 
-![Large text from the footer bleeding into the body of the Section.](https://github.com/shiftingsand/InAccessibility-cwu/blob/main/052522colorBleed.png])
+![Large text from the footer bleeding into the body of the Section.](https://github.com/shiftingsand/InAccessibility-cwu/blob/main/052522colorBleed.png)
 
 I also thought the black graph was hard to read in dark mode so I had that change when toggling between light and dark mode.
 
