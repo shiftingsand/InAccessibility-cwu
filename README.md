@@ -12,15 +12,13 @@ I did [some research](https://www.tableau.com/about/blog/examining-data-viz-rule
 
 <img width="300" alt="The menu where colors are selected." src="https://github.com/shiftingsand/InAccessibility-cwu/blob/main/052522colorMenu.png">
 
-![The menu where colors are selected.](https://github.com/shiftingsand/InAccessibility-cwu/blob/main/052522colorMenu.png)
-
-![The UI after an alternate color scheme has been selected.](https://github.com/shiftingsand/InAccessibility-cwu/blob/main/052522colorResult.png)
+<img width="300" alt="The UI after an alternate color scheme has been selected." src="https://github.com/shiftingsand/InAccessibility-cwu/blob/main/052522colorResult.png">
 
 I made some logic so that the accessibility hint will describe what color is being replaced and what that color indicates.
 
 Something I can't figure out is how to stop the footer in a Section of a SwiftUI Form from bleeding into the section when the largest accessibility fonts are used.
 
-![Large text from the footer bleeding into the body of the Section.](https://github.com/shiftingsand/InAccessibility-cwu/blob/main/052522colorBleed.png)
+<img width="300" alt="Large text from the footer bleeding into the body of the Section." src="https://github.com/shiftingsand/InAccessibility-cwu/blob/main/052522colorBleed.png">
 
 ## Misc
 
