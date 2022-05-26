@@ -17,6 +17,7 @@ struct FavoriteHeader: View {
             } label: {
                 Text("Tap for more")
             }
+            .accessibilityHint(Text("Performs some action known only to Jordi."))
         }
     }
 }

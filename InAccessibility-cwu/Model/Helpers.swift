@@ -21,8 +21,6 @@ func prettyPrice(_ rawData: Double) -> String {
 }
 
 func colorsToUse(modeToUse : ColorBlindMode) -> (greenColor : Color, redColor : Color) {
-    #warning("update readme")
-    
     switch modeToUse {
         case .greenRed:
             return (greenColor: .green, redColor: .red)

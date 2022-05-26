@@ -39,7 +39,6 @@ struct MainView: View {
                     //.accessibilityAddTraits(.isButton)
                     //.accessibilityLabel(Text("Stock Cell"))
                     //.accessibilityHint(Text("Tap to show details."))
-                #warning("will adding this stop us from tapping items in the cell itself?")
             }
         } header: {
             HStack {
@@ -86,13 +85,6 @@ struct MainView: View {
         }
     }
 }
-
-
-//NavigationLink(destination: Settings(), isActive: $showSettings) {
-//    EmptyView()
-//}
-//.hidden()
-//.accessibilityHidden(true)
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
