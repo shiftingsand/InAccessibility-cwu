@@ -38,3 +38,24 @@ func colorsToUse(modeToUse : ColorBlindMode) -> (greenColor : Color, redColor : 
             return (greenColor: .yellow, redColor: .pink)
     }
 }
+
+func starColorToUse(desiredColor : StarColors) -> Color {
+    switch desiredColor {
+        case .yellowStar:
+            return .yellow
+        case .blueStar:
+            return .blue
+        case .cyanStar:
+            return .cyan
+        case .redStar:
+            return .red
+        case .purpleStar:
+            return .purple
+        case .orangeStar:
+            return .orange
+        case .brownStar:
+            return .brown
+        case .pinkStar:
+            return .pink
+    }
+}

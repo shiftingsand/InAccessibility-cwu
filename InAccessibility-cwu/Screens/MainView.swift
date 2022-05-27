@@ -78,6 +78,7 @@ struct MainView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 NavigationLink(destination: Settings()) {
                     Text("\(Image(systemName: "gearshape.fill"))")
+                        .accessibilityAddTraits(.isButton)
                         .accessibilityLabel(Text("Settings"))
                         .accessibilityHint(Text("Change the color scheme."))
                 }

@@ -10,6 +10,8 @@ import SwiftUI
 struct StockCell: View {
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     
+    @AppStorage(UserDefConstants.StarColor) var starColorFound : StarColors = UserDefConstants.StarColorDefault
+    
     @State var showInfo = false
     
     let stock: Stock
@@ -38,19 +40,19 @@ struct StockCell: View {
                         }
                         .accessibilityAddTraits(.isButton)
                         .accessibilityLabel(Text("Info"))
-                        .accessibilityHint(Text("Shows current stock price for the company."))
+                        .accessibilityHint(Text("Shows current stock price for \(stock.shortName)."))
                     
                     Text("\(Image(systemName: "star.fill"))")
                     //Image(systemName: "star.fill")
                         .scaledToFit()
                         //.frame(width: 16, height: 16)
                         .font(UIConstants.SmallGraphicsSize)
-                        .foregroundColor(UIConstants.StarColor)
+                        .foregroundColor(starColorToUse(desiredColor: starColorFound))
                         .opacity(stock.favorite ? 1 : 0)
                         .accessibilityHidden(!stock.favorite)
                         .accessibilityAddTraits(.isButton)
                         .accessibilityLabel(Text("Favorite indicator"))
-                        .accessibilityHint(Text("A \(UIConstants.StarColor.description) star indicating it's a favorite." + MessageConstants.TapForCompanyInfo))
+                        .accessibilityHint(Text("A \(starColorToUse(desiredColor: starColorFound).description) star indicating \(stock.shortName) is a favorite company." + MessageConstants.TapForCompanyInfo))
                 }
      
             }

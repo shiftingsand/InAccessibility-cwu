@@ -11,24 +11,17 @@ import SwiftUI
 enum UIConstants {
     static let SmallGraphicsSize : Font = .caption2
     static let ColorChoiceSize : CGFloat = 40
-    static let StarColor : Color = .yellow
 }
 
 enum MessageConstants {
-    static let TapForCompanyInfo = "Tap for info about the company."
+    static let TapForCompanyInfo = "Shows details about the company."
 }
 
 enum UserDefConstants {
-    static let ColorblindMode = "ColorblindMode"
+    static let Start = "InAccessibility" // so the entries added by this app to userdefaults can be easily found and deleted later if so desired.
+    static let ColorblindMode = Start + "ColorblindMode"
+    static let StarColor = Start + "StarColor"
     static let ColorblindModeDefault : ColorBlindMode = .greenRed
+    static let StarColorDefault : StarColors = .yellowStar
 }
 
-enum ColorBlindMode : String, Codable, CaseIterable {
-    case greenRed = "Green Red",
-         greenPurple = "Green Purple",
-         blueOrange = "Blue Orange",
-         blueRed = "Blue Red",
-         blueBrown = "Blue Brown",
-         cyanBrown = "Cyan Brown",
-         yellowPink = "Yellow Pink"
-}

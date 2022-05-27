@@ -9,11 +9,14 @@ import SwiftUI
 
 struct Settings: View {
     @AppStorage(UserDefConstants.ColorblindMode) var colorBlindModeFound : ColorBlindMode = UserDefConstants.ColorblindModeDefault
+    @AppStorage(UserDefConstants.StarColor) var starColorFound : StarColors = UserDefConstants.StarColorDefault
+    
+    @State var starColorChoices : [ Color ] = [.yellow]
     
     var body: some View {
         Form {
             Section {
-                Picker("Choose colors", selection: $colorBlindModeFound) {
+                Picker("Choose Colors For Stock Change", selection: $colorBlindModeFound) {
                     ForEach(ColorBlindMode.allCases, id:\.self) { oneColorMode in
                         VStack(alignment: .leading) {
                             Text("\(oneColorMode.rawValue)")
@@ -28,8 +31,23 @@ struct Settings: View {
                             }
                         }
                         .accessibilityElement(children: .combine)
-                        .accessibilityLabel(Text("Choose colors"))
+                        .accessibilityLabel(Text("Choose Colors For Stock Change"))
                         .accessibilityHint(Text("\(makeAccessibilityHints(colorMode: oneColorMode))"))
+                    }
+                }
+                
+                Picker("Choose Star Color", selection: $starColorFound) {
+                    ForEach(StarColors.allCases, id:\.self) { oneStarColor in
+                        VStack(alignment: .leading) {
+                            Text("\(starColorToUse(desiredColor: oneStarColor).description)")
+                            
+                            Rectangle()
+                                .foregroundColor(starColorToUse(desiredColor: oneStarColor))
+                                .frame(width: UIConstants.ColorChoiceSize, height: UIConstants.ColorChoiceSize)
+                        }
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel(Text("Choose Star Color"))
+                        .accessibilityHint(Text("A \(starColorToUse(desiredColor:oneStarColor).description) colored star will indicate a favorite."))
                     }
                 }
             } header: {

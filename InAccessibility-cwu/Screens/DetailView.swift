@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-enum AlertItem: String, Identifiable {
-    case share
-    case favorite
-    
-    var id: String { self.rawValue }
-}
-
 struct DetailView: View {
     @Environment(\.dismiss) var dismiss
     
@@ -111,6 +104,7 @@ struct DetailView: View {
             .buttonStyle(.borderedProminent)
             .tint(colorsToUse(modeToUse: colorBlindModeFound).greenColor)
             .controlSize(.large)
+            .accessibilityHint(Text("Share this company."))
             
             // i've never seen a yellow button and can't shake the feeling the text was hard to read.
             Button {
@@ -124,6 +118,7 @@ struct DetailView: View {
             .buttonStyle(.borderedProminent)
             .tint(colorsToUse(modeToUse: colorBlindModeFound).redColor)
             .controlSize(.large)
+            .accessibilityHint(Text("Save this company as a favorite."))
         }
     }
 }
