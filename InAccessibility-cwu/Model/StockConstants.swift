@@ -14,7 +14,8 @@ enum UIConstants {
 }
 
 enum MessageConstants {
-    static let TapForCompanyInfo = "Shows details about the company."
+    //static let TapForCompanyInfo = "Shows details about the company."
+    static let TapForCompanyInfoWithArg = "Shows details about %@."
 }
 
 enum UserDefConstants {

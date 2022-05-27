@@ -22,7 +22,7 @@ struct StockPrice: View {
                 .font(.caption)
                 .accessibilityLabel(Text("Stock Price \(prettyPrice(stock.stockPrice))"))
                 .accessibilityAddTraits(.isButton)
-                .accessibilityHint(Text(MessageConstants.TapForCompanyInfo))
+                .accessibilityHint(Text(String(format: MessageConstants.TapForCompanyInfoWithArg, stock.shortName)))
             
             if dynamicTypeSize.isAccessibilitySize == false {
                 Spacer()
@@ -37,7 +37,7 @@ struct StockPrice: View {
                 .foregroundColor(.white)
                 .accessibilityLabel(Text("Stock Change \(String(format: "%.2f",stock.change))"))
                 .accessibilityAddTraits(.isButton)
-                .accessibilityHint(Text(MessageConstants.TapForCompanyInfo))
+                .accessibilityHint(Text(String(format: MessageConstants.TapForCompanyInfoWithArg, stock.shortName)))
         }
     }
 }

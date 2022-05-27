@@ -26,7 +26,7 @@ struct StockCell: View {
                         .bold()
                         .accessibilityLabel(Text("Short Name \(stock.shortName)"))
                         .accessibilityAddTraits(.isButton)
-                        .accessibilityHint(Text(MessageConstants.TapForCompanyInfo))
+                        .accessibilityHint(Text(String(format: MessageConstants.TapForCompanyInfoWithArg, stock.shortName)))
                     
                     Spacer()
                     
@@ -52,7 +52,7 @@ struct StockCell: View {
                         .accessibilityHidden(!stock.favorite)
                         .accessibilityAddTraits(.isButton)
                         .accessibilityLabel(Text("Favorite indicator"))
-                        .accessibilityHint(Text("A \(starColorToUse(desiredColor: starColorFound).description) star indicating \(stock.shortName) is a favorite company." + MessageConstants.TapForCompanyInfo))
+                        .accessibilityHint(Text("A \(starColorToUse(desiredColor: starColorFound).description) star indicating \(stock.shortName) is a favorite company." + String(format: MessageConstants.TapForCompanyInfoWithArg, stock.shortName)))
                 }
      
             }
@@ -64,7 +64,7 @@ struct StockCell: View {
                     .font(.caption)
                     .accessibilityLabel(Text("Stock Name \(stock.name)"))
                     .accessibilityAddTraits(.isButton)
-                    .accessibilityHint(Text(MessageConstants.TapForCompanyInfo))
+                    .accessibilityHint(Text(String(format: MessageConstants.TapForCompanyInfoWithArg, stock.shortName)))
                 
                 Spacer()
                 
